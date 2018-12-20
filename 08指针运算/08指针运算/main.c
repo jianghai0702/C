@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 
+//typedef int (*MyBlock)(int a, int b);
 
 
 int sum(int a, int b)
@@ -21,9 +22,15 @@ int sum(int a, int b)
 int block(int (*sum) (int c,int d), int a, int b )
 {
     int temp = sum(a,b);
-    
+
     return temp;
 }
+//int block(MyBlock block, int a, int b )
+//{
+//    int temp = sum(a,b);
+//
+//    return temp;
+//}
 
 
 
@@ -90,14 +97,14 @@ int main(int argc, const char * argv[]) {
      1.把方法地址传过去
      */
     
-    int num2 = block(&sum ,1,2);
-    
-    printf("%i \n",num2);
-    
-    
+//    int num2 = block(&sum ,1,2);
+//
+//    printf("%i \n",num2);
     
     
+    int num3 = block(sum, 1, 2);
     
+    printf("%i \n",num3);
     
     
     return 0;
